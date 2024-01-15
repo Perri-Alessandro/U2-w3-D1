@@ -53,9 +53,11 @@ const createCard = function () {
     newCol.innerHTML = `
         <div class="card">
          <div class="card-body border border-warning">
-           <h5 class="card-title text-danger">${pet.petName}</h5>
+           <h5 class="card-title text-danger">${pet.petName.toUpperCase()}</h5>
            <h6 class="card-subtitle mb-2 text-body-secondary ">${pet.owner}</h6>
-           <h6 class="card-subtitle mb-2 text-body-secondary">${pet.species}</h6>
+           <h6 class="card-subtitle mb-2 text-body-secondary">${
+             pet.species
+           }</h6>
            <h6 class="card-subtitle mb-2 text-body-secondary">${pet.breed}</h6>
          </div>
         </div>
