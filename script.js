@@ -84,14 +84,18 @@ comportamentoForm.addEventListener("submit", function (e) {
     breedInput.value
   );
 
-  const hannoStessoProprietario = pets.some((existingPet) =>
-    pet.sameOwner(existingPet)
+  const hannoStessoProprietario = pets.some((petEsistente) =>
+    pet.sameOwner(petEsistente)
   );
 
-  if (hannoStessoProprietario) {
+  if (hannoStessoProprietario && pets.length > 0) {
     console.log("GLI ANIMALI IN QUESTIONE HANNO LO STESSO PADRONE");
-  } else {
+  } else if (!hannoStessoProprietario && pets.length > 0) {
     console.log("GLI ANIMALI IN QUESTIONE NON HANNO LO STESSO PADRONE");
+  } else {
+    console.log(
+      "SOLO 1 CARD PET CREATE, CREANE PIù DI UNA PER VEDERE SE HANNO LO STESSO PROPRIETARIO"
+    );
   }
 
   console.log("PET CARD CREATA");
