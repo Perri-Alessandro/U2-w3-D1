@@ -39,6 +39,9 @@ class Pet {
     this.species = _species;
     this.breed = _breed;
   }
+  sameOwner(otherOwner) {
+    return this.owner === otherOwner.owner;
+  }
 }
 
 const createCard = function () {
@@ -49,9 +52,9 @@ const createCard = function () {
     newCol.classList.add("col");
     newCol.innerHTML = `
         <div class="card">
-         <div class="card-body">
-           <h5 class="card-title">${pet.petName}</h5>
-           <h6 class="card-subtitle mb-2 text-body-secondary">${pet.owner}</h6>
+         <div class="card-body border border-warning">
+           <h5 class="card-title text-danger">${pet.petName}</h5>
+           <h6 class="card-subtitle mb-2 text-body-secondary ">${pet.owner}</h6>
            <h6 class="card-subtitle mb-2 text-body-secondary">${pet.species}</h6>
            <h6 class="card-subtitle mb-2 text-body-secondary">${pet.breed}</h6>
          </div>
@@ -78,6 +81,16 @@ comportamentoForm.addEventListener("submit", function (e) {
     speciesInput.value,
     breedInput.value
   );
+
+  const hannoStessoProprietario = pets.some((existingPet) =>
+    pet.sameOwner(existingPet)
+  );
+
+  if (hannoStessoProprietario) {
+    console.log("GLI ANIMALI IN QUESTIONE HANNO LO STESSO PADRONE");
+  } else {
+    console.log("GLI ANIMALI IN QUESTIONE NON HANNO LO STESSO PADRONE");
+  }
 
   console.log("PET CARD CREATA");
   pets.push(pet);

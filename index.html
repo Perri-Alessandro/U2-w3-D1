@@ -22,19 +22,19 @@
           <form class="col-5">
             <div class="mb-3">
               <label for="name" class="form-label">PET NAME</label>
-              <input class="form-control" id="name" />
+              <input class="form-control" id="name" required />
             </div>
             <div class="mb-3">
               <label for="owner" class="form-label">OWNER NAME</label>
-              <input class="form-control" id="owner" />
+              <input class="form-control" id="owner" required />
             </div>
             <div class="mb-3">
               <label for="species" class="form-label">SPECIES</label>
-              <input class="form-control" id="species" />
+              <input class="form-control" id="species" required />
             </div>
             <div class="mb-3">
               <label for="breed" class="form-label">BREED</label>
-              <input class="form-control" id="breed" />
+              <input class="form-control" id="breed" required />
             </div>
             <div class="text-center">
               <button type="submit" class="btn btn-primary mt-4">SUBMIT</button>
@@ -42,7 +42,12 @@
           </form>
         </div>
       </section>
-      <section class="row" id="pets"></section>
+      <section class="w-2">
+        <article
+          class="row text-center mt-4 row-cols-4 g-2 justify-content-center"
+          id="pets"
+        ></article>
+      </section>
     </main>
     <footer></footer>
     <script
